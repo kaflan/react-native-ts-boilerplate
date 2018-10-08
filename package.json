@@ -1,0 +1,54 @@
+{
+  "name": "cvc",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.5.0",
+    "react-native": "0.57.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.3",
+    "@types/react": "^16.4.16",
+    "@types/react-native": "^0.57.3",
+    "axios": "^0.18.0",
+    "babel-jest": "23.6.0",
+    "husky": "^1.1.1",
+    "jest": "^23.6.0",
+    "metro-react-native-babel-preset": "0.48.0",
+    "react-native-typescript-transformer": "^1.2.10",
+    "react-navigation": "^2.17.0",
+    "react-navigation-redux-helpers": "^2.0.6",
+    "react-test-renderer": "16.5.0",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run test"
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "cacheDirectory": ".jest/cache"
+  }
+}
