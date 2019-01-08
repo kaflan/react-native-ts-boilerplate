@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
+import Header, { HeaderProps } from '../components/Header';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+
+
+
+
+export default class Login extends Component<any,HeaderProps > {
+  constructor(props:any) {
+    super(props);
+    this.state = {
+      headerText: 'Star Gate',
+    };
   }
-});
-
-export default class Login extends Component<void> {
   render() {
+    const { headerText } = this.state;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Login screen</Text>
+      <View>
+        <Header headerText={headerText} />
       </View>
     );
   }
