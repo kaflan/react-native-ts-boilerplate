@@ -9,7 +9,6 @@ function* initWorker(): SagaIterator {
   try {
     const { data } = yield call(axios.get, url);
     yield put({ ...filmListLoaded(data) })
-    console.log({ ...filmListLoaded(data) })
   } catch (error) {
     console.error(error);
   }
