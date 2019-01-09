@@ -37,17 +37,15 @@ interface ICard {
     name: string,
 }
 
-const { container, h1, cover, sub } = style;
+const {container, h1, cover, sub} = style;
 
-const Card: SFC<ICard> = (props) => {
-    return (
-        <View style={container}>
-            <View style={sub}>
-                <Image style={cover as ImageStyle} source={{uri: props.image }} />
-            </View>
-            <Text style={h1}>{props.name.toUpperCase()}</Text>
+const Card: SFC<ICard> = (props) => (
+    <View style={container}>
+        <View style={sub}>
+            <Image style={cover as ImageStyle} source={{uri: props.image}}/>
         </View>
-    )
-}
+        <Text style={h1}>{props.name.toUpperCase()}</Text>
+    </View>
+);
 
 export default Card;

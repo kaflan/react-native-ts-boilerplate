@@ -10,13 +10,13 @@ interface IFilmListProps {
   filmList: IFilm[]
 }
 
-const mapStateToProps = (state: any) => ({ filmList: state.global.filmList})
+const mapStateToProps = (state: any) => ({ filmList: state.global.filmList});
 
 
 
 class Home extends Component<IFilmListProps, IHeaderProps> {
-  constructor(props: IFilmListProps, context?: any) {
-    super(props, context);
+  constructor(props: IFilmListProps) {
+    super(props);
     this.state = {
       headerText: 'Star Gate',
     };
@@ -38,4 +38,3 @@ class Home extends Component<IFilmListProps, IHeaderProps> {
   }
 }
 export default connect(mapStateToProps)(Home);
-// export default Home
