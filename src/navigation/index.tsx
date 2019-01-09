@@ -6,11 +6,11 @@ import {
 import { loginNavTypes, drawerNavTypes } from './config';
 
 import Home from '../screens/Home';
-import Login from '../screens/Login';
+import FilmLIst from '../screens/FilmLIst';
 
 const LoginStack = createStackNavigator(
   {
-    [loginNavTypes.LOGIN]: { screen: Login },
+    [loginNavTypes.LOGIN]: { screen: FilmLIst },
   },
   {
     headerMode: 'none',

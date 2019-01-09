@@ -1,7 +1,7 @@
 import React, { SFC } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-export interface HeaderProps {
+export interface IHeaderProps {
   headerText: string;
 }
 const styles = StyleSheet.create({
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const Header: SFC<HeaderProps> = ({headerText}) => (
+const Header: SFC<IHeaderProps> = ({headerText}) => (
   <View style = { styles.viewStyle } >
     <Text style={styles.textStyle}>{headerText}</Text>
   </View >
