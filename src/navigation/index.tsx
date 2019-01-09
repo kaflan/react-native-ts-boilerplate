@@ -3,9 +3,10 @@ import {
   createStackNavigator,
   createSwitchNavigator,
 } from 'react-navigation';
-import { loginNavTypes, drawerNavTypes } from './config';
+import { loginNavTypes, drawerNavTypes, starGateDetails } from './config';
 
 import Home from '../screens/Home';
+import DetailsCard from '../screens/DetailsCard';
 
 const LoginStack = createStackNavigator(
   {
@@ -18,6 +19,10 @@ const LoginStack = createStackNavigator(
 
 const DrawerStack = createDrawerNavigator({
   [drawerNavTypes.HOME]: { screen: Home },
+  [starGateDetails.STAR_GATE_DETAILS]: {
+    screen: DetailsCard
+  },
+
 });
 
 const DrawerNavigation = createStackNavigator(
@@ -26,10 +31,11 @@ const DrawerNavigation = createStackNavigator(
   },
   {
     headerMode: 'float',
-    navigationOptions: ( ) => ({
+    navigationOptions: ({navigation}) => ({
       headerStyle: { backgroundColor: '#4C3E54' },
       title: 'Welcome!',
       headerTintColor: 'white',
+        ...navigation,
     }),
   }
 );

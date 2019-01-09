@@ -70,7 +70,7 @@ const Header: SFC<IHeaderProps> = ({headerText, iconLeft, onPress, onPressRight,
             <Ionicons name={iconLeft} style={iconLeftStyle} color={colorLeft}/>
         </TouchableOpacity>
         }
-        <Text style={textStyle}>{headerText}</Text>
+        <Text style={textStyle}>{headerText.toUpperCase()}</Text>
         {iconRight &&
         <TouchableOpacity onPress={onPressRight}>
             <MaterialCommunityIcons name={iconRight} style={[rightIconStyle, {color: colorRight}]}/>

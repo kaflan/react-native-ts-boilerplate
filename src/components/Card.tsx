@@ -1,5 +1,5 @@
 import React, {SFC} from 'react';
-import {View, Text, Image, StyleSheet, ImageStyle} from 'react-native';
+import {View, Text, Image, StyleSheet, ImageStyle, TouchableOpacity} from 'react-native';
 import {width} from '../../constants';
 
 const style = StyleSheet.create({
@@ -33,19 +33,22 @@ const style = StyleSheet.create({
 });
 
 interface ICard {
-    image: string,
-    name: string,
+    image: string;
+    name: string;
+    onPress: () => void;
 }
 
 const {container, h1, cover, sub} = style;
 
-const Card: SFC<ICard> = (props) => (
-    <View style={container}>
-        <View style={sub}>
-            <Image style={cover as ImageStyle} source={{uri: props.image}}/>
+const Card: SFC<ICard> = ({image, name, onPress}) => (
+    <TouchableOpacity onPress={onPress}>
+        <View style={container}>
+            <View style={sub}>
+                <Image style={cover as ImageStyle} source={{uri: image}}/>
+            </View>
+            <Text style={h1}>{name.toUpperCase()}</Text>
         </View>
-        <Text style={h1}>{props.name.toUpperCase()}</Text>
-    </View>
+    </TouchableOpacity>
 );
 
 export default Card;
