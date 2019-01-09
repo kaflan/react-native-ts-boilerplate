@@ -6,11 +6,10 @@ import {
 import { loginNavTypes, drawerNavTypes } from './config';
 
 import Home from '../screens/Home';
-import FilmLIst from '../screens/FilmLIst';
 
 const LoginStack = createStackNavigator(
   {
-    [loginNavTypes.LOGIN]: { screen: FilmLIst },
+    [loginNavTypes.LOGIN]: { screen: Home },
   },
   {
     headerMode: 'none',
@@ -27,7 +26,7 @@ const DrawerNavigation = createStackNavigator(
   },
   {
     headerMode: 'float',
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ( ) => ({
       headerStyle: { backgroundColor: '#4C3E54' },
       title: 'Welcome!',
       headerTintColor: 'white',

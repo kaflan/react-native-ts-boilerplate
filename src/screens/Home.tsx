@@ -1,12 +1,41 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import {connect} from 'react-redux';
+import Header, { IHeaderProps } from '../components/Header';
+import { IFilm } from "../redux/modules/global/types";
+import Layout from "../components/LayoutScroll";
+import Card from "../components/Card";
 
-export default class Home extends Component<void> {
+interface IFilmListProps {
+  filmList: IFilm[]
+}
+
+const mapStateToProps = (state: any) => ({ filmList: state.global.filmList})
+
+
+
+class Home extends Component<IFilmListProps, IHeaderProps> {
+  constructor(props: IFilmListProps, context?: any) {
+    super(props, context);
+    this.state = {
+      headerText: 'Star Gate',
+    };
+  }
+
   render() {
+    const { headerText } = this.state;
+    const { filmList } = this.props;
     return (
       <View>
-        <Text>Home screen</Text>
+        <Header headerText={headerText.toUpperCase()} />
+        <ScrollView>
+          <Layout>
+            {filmList.map(item => <Card {...item} key={item.id} />)}
+          </Layout>
+        </ScrollView>
       </View>
     );
   }
 }
+export default connect(mapStateToProps)(Home);
+// export default Home
