@@ -27,7 +27,6 @@ class Home extends Component<IFilmListProps, IHeaderProps> {
 
   onPress = (item: any) => {
     const { navigation } = this.props;
-    // console.log('onPress', item, navigation);
     navigation.navigate(starGateDetails.STAR_GATE_DETAILS, ({ show: { ...item } }))
   };
   render() {
@@ -43,6 +42,7 @@ class Home extends Component<IFilmListProps, IHeaderProps> {
                 name={item.name}
                 image={item.image}
                 key={`${item.id}-uiid`}
+                  // tslint:disable-next-line jsx-no-lambda
                 onPress={() => this.onPress(item)}
               />
             ))}
