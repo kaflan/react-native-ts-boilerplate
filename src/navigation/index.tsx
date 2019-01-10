@@ -1,3 +1,5 @@
+import React from 'react';
+import { View } from 'react-native';
 import {
   createStackNavigator,
 } from 'react-navigation';
@@ -5,7 +7,6 @@ import { homeNavTypes, starGateDetailsNavTypes } from './config';
 
 import Home from '../screens/Home';
 import DetailsCard from '../screens/DetailsCard';
-import {width} from '../../constants';
 
 export const PrimaryNav = createStackNavigator(
   {
@@ -20,15 +21,16 @@ export const PrimaryNav = createStackNavigator(
       const title = navigation.getParam('name', 'Favorite films').toUpperCase();
 
       return ({
-        headerStyle: { backgroundColor: '#4C3E54' },
+        headerStyle: { backgroundColor: '#4C3E54', textAlign: 'center', justifyContent: 'center' },
         headerBackTitle: ' ',
         title,
         headerTintColor: 'white',
         headerTitleStyle: {
           fontSize: 18,
-          width
+          alignSelf:'center',flex:1,
+          textAlign: 'center',
         },
-
+        headerRight: (<View />),
       })
     },
     initialRouteName: homeNavTypes.HOME,
