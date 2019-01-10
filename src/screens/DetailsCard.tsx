@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
-import { Image, View, StyleSheet, ImageStyle, Text, ScrollView } from 'react-native';
-import { width } from '../../constants';
-import { NavigationScreenProp, NavigationState } from "react-navigation";
+import {Image, View, StyleSheet, ImageStyle, Text, ScrollView} from 'react-native';
+import {width} from '../../constants';
+import {NavigationScreenProp, NavigationState} from "react-navigation";
 
 const styles = StyleSheet.create({
-    container: {
-    },
+    container: {},
     sub: {
         shadowColor: '#000',
         shadowRadius: 8,
-        shadowOffset: { width: 0, height: 5 },
+        shadowOffset: {width: 0, height: 5},
         shadowOpacity: 0.4,
         justifyContent: 'center',
         alignItems: 'center',
@@ -28,26 +27,24 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     }
 });
-const { cover, sub, container, h4, h3 } = styles;
+const {cover, sub, container, h4, h3} = styles;
 
 interface IDetailsCard {
     navigation: NavigationScreenProp<NavigationState>;
 }
 
 class DetailsCard extends Component<IDetailsCard> {
-    render(){
-        const { image, info, year } = this.props.navigation.state.params;
+    render() {
+        const {image, info, year} = this.props.navigation.state.params;
         return (
             <View style={container}>
                 <ScrollView>
                     <View style={sub}>
-                        <Image style={cover as ImageStyle} source={{ uri: image }} />
+                        <Image style={cover as ImageStyle} source={{uri: image}}/>
                     </View>
-                    <ScrollView>
-                        <Text style={h3}> Info </Text>
-                        <Text style={h4}> {info}</Text>
-                        <Text style={h4}>Year: {year}</Text>
-                    </ScrollView>
+                    <Text style={h3}> Info </Text>
+                    <Text style={h4}> {info}</Text>
+                    <Text style={h4}>Year: {year}</Text>
                 </ScrollView>
             </View>
         );
