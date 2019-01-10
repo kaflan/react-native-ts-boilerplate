@@ -5,6 +5,7 @@ import { homeNavTypes, starGateDetailsNavTypes } from './config';
 
 import Home from '../screens/Home';
 import DetailsCard from '../screens/DetailsCard';
+import {width} from '../../constants';
 
 export const PrimaryNav = createStackNavigator(
   {
@@ -17,11 +18,16 @@ export const PrimaryNav = createStackNavigator(
     headerMode: 'float',
     navigationOptions: ({navigation}) => {
       const title = navigation.getParam('name', 'Favorite films').toUpperCase();
+
       return ({
-        headerStyle: { backgroundColor: '#4C3E54', fontSize: 40, color: '#fff' },
+        headerStyle: { backgroundColor: '#4C3E54' },
         headerBackTitle: ' ',
         title,
         headerTintColor: 'white',
+        headerTitleStyle: {
+          fontSize: 18,
+          width
+        },
 
       })
     },
