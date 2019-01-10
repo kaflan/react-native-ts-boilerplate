@@ -34,8 +34,11 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: '#fff',
-        fontSize: 28,
+        fontSize: 20,
         width: width - 75,
+        textAlign: 'center',
+        alignSelf: 'center',
+        margin: 10,
         fontFamily: 'AvenirNext-DemiBold',
         ...ifIphoneX({
             paddingTop: 75

@@ -6,7 +6,6 @@ import { NavigationScreenProp, NavigationState } from "react-navigation";
 
 const styles = StyleSheet.create({
     container: {
-        paddingVertical: 20
     },
     sub: {
         shadowColor: '#000',

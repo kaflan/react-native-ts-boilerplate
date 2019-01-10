@@ -21,7 +21,7 @@ class Home extends Component<IFilmListProps, IHeaderProps> {
   constructor(props: IFilmListProps) {
     super(props);
     this.state = {
-      headerText: 'Star Gate',
+      headerText: 'StarGate',
     };
   }
 

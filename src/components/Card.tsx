@@ -1,5 +1,5 @@
 import React, {SFC} from 'react';
-import {View, Text, Image, StyleSheet, ImageStyle, TouchableOpacity} from 'react-native';
+import {View, Text, Image, StyleSheet, ImageStyle, TouchableOpacity } from 'react-native';
 import {width} from '../../constants';
 
 const style = StyleSheet.create({
@@ -20,10 +20,11 @@ const style = StyleSheet.create({
     },
     h1: {
         paddingTop: 20,
-        fontSize: 18,
+        fontSize: 16,
         alignSelf: 'center',
         textAlign: 'center',
         width: width / 2.4,
+        height: 60
     },
     cover: {
         borderRadius: 10,

@@ -30,11 +30,9 @@ const DrawerNavigation = createStackNavigator(
     DrawerStack: { screen: DrawerStack },
   },
   {
-    headerMode: 'float',
+    headerMode: 'none',
     navigationOptions: ({navigation}) => ({
-      headerStyle: { backgroundColor: '#4C3E54' },
-      title: 'Welcome!',
-      headerTintColor: 'white',
+      title: 'back',
         ...navigation,
     }),
   }
