@@ -17,18 +17,23 @@ export const PrimaryNav = createStackNavigator(
   },
   {
     headerMode: 'float',
+    headerLayoutPreset: 'center',
     navigationOptions: ({navigation}) => {
-      const title = navigation.getParam('name', 'Favorite films').toUpperCase();
+      const title = navigation.getParam('name', 'Favorite Films').toUpperCase();
 
       return ({
-        headerStyle: { backgroundColor: '#4C3E54', textAlign: 'center', justifyContent: 'center' },
-        headerBackTitle: ' ',
+        headerStyle: { backgroundColor: '#4C3E54' },
+        headerBackTitle: '',
         title,
         headerTintColor: 'white',
         headerTitleStyle: {
           fontSize: 18,
-          alignSelf:'center',flex:1,
-          textAlign: 'center',
+          alignSelf: 'center',
+          textAlign: "center",
+          justifyContent: 'center',
+          flex: 1,
+          fontWeight: 'bold',
+          textAlignVertical: 'center',
         },
         headerRight: (<View />),
       })
