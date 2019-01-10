@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     h3: {
-        fontSize: 22,
+        fontSize: 26,
         textAlign: 'center',
     }
 });
