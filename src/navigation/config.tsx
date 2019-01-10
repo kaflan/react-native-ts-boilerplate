@@ -6,10 +6,10 @@ export const loginNavTypes: Route = {
   LOGIN: 'login',
 };
 
-export const drawerNavTypes: Route = {
+export const homeNavTypes: Route = {
   HOME: 'home',
 };
 
-export const starGateDetails: Route = {
+export const starGateDetailsNavTypes: Route = {
   STAR_GATE_DETAILS: 'STAR_GATE_DETAILS',
 };

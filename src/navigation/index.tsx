@@ -1,49 +1,31 @@
 import {
-  createDrawerNavigator,
   createStackNavigator,
-  createSwitchNavigator,
 } from 'react-navigation';
-import { loginNavTypes, drawerNavTypes, starGateDetails } from './config';
+import { homeNavTypes, starGateDetailsNavTypes } from './config';
 
 import Home from '../screens/Home';
 import DetailsCard from '../screens/DetailsCard';
 
-const LoginStack = createStackNavigator(
+export const PrimaryNav = createStackNavigator(
   {
-    [loginNavTypes.LOGIN]: { screen: Home },
+    [homeNavTypes.HOME]: { screen: Home },
+    [starGateDetailsNavTypes.STAR_GATE_DETAILS]: {
+      screen: DetailsCard
+    },
   },
   {
-    headerMode: 'none',
+    headerMode: 'float',
+    navigationOptions: ({navigation}) => {
+      const title = navigation.getParam('name', 'Favorite films').toUpperCase();
+      return ({
+        headerStyle: { backgroundColor: '#4C3E54', fontSize: 40, color: '#fff' },
+        headerBackTitle: ' ',
+        title,
+        headerTintColor: 'white',
+
+      })
+    },
+    initialRouteName: homeNavTypes.HOME,
   }
 );
 
-const DrawerStack = createDrawerNavigator({
-  [drawerNavTypes.HOME]: { screen: Home },
-  [starGateDetails.STAR_GATE_DETAILS]: {
-    screen: DetailsCard
-  },
-
-});
-
-const DrawerNavigation = createStackNavigator(
-  {
-    DrawerStack: { screen: DrawerStack },
-  },
-  {
-    headerMode: 'none',
-    navigationOptions: ({navigation}) => ({
-      title: 'back',
-        ...navigation,
-    }),
-  }
-);
-
-export const PrimaryNav = createSwitchNavigator(
-  {
-    loginStack: { screen: LoginStack },
-    drawerStack: { screen: DrawerNavigation },
-  },
-  {
-    initialRouteName: 'loginStack',
-  }
-);

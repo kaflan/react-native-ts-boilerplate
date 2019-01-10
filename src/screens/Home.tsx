@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationScreenProp } from 'react-navigation';
-import Header, { IHeaderProps } from '../components/Header';
 import { IFilm } from "../redux/modules/global/types";
 import Layout from "../components/LayoutScroll";
 import Card from "../components/Card";
-import { starGateDetails } from "../navigation/config";
+import { starGateDetailsNavTypes } from "../navigation/config";
 
 interface IFilmListProps {
   filmList: IFilm[],
@@ -17,24 +16,16 @@ const mapStateToProps = (state: any) => ({ filmList: state.global.filmList });
 
 
 
-class Home extends Component<IFilmListProps, IHeaderProps> {
-  constructor(props: IFilmListProps) {
-    super(props);
-    this.state = {
-      headerText: 'StarGate',
-    };
-  }
+class Home extends Component<IFilmListProps> {
 
-  onPress = (item: any) => {
+  onPress = (item: IFilm) => {
     const { navigation } = this.props;
-    navigation.navigate(starGateDetails.STAR_GATE_DETAILS, ({ show: { ...item } }))
+    navigation.navigate(starGateDetailsNavTypes.STAR_GATE_DETAILS, ({ ...item }))
   };
   render() {
-    const { headerText } = this.state;
     const { filmList } = this.props;
     return (
       <View>
-        <Header headerText={headerText} />
         <ScrollView>
           <Layout>
             {filmList.map(item => (
@@ -42,7 +33,7 @@ class Home extends Component<IFilmListProps, IHeaderProps> {
                 name={item.name}
                 image={item.image}
                 key={`${item.id}-uiid`}
-                  // tslint:disable-next-line jsx-no-lambda
+                // tslint:disable-next-line jsx-no-lambda
                 onPress={() => this.onPress(item)}
               />
             ))}
