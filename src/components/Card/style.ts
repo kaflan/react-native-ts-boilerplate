@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {width , height} from "../../../constants";
+import { width, height } from "../../../constants";
 
 const style = StyleSheet.create({
     container: {
@@ -7,13 +7,7 @@ const style = StyleSheet.create({
         flex: 3,
         marginBottom: 10,
         borderRadius: 10,
-        shadowColor: '#000',
-        shadowRadius: 8,
-        shadowOffset: {
-            width: 0, height: 5,
-        },
         padding: 10,
-        shadowOpacity: 0.8,
         elevation: 2,
     },
     sub: {
@@ -36,6 +30,7 @@ const style = StyleSheet.create({
         height: height / 2,
         resizeMode: "contain",
         width: width * 0.8,
+        elevation: 2,
     }
 });
 

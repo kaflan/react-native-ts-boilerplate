@@ -4,27 +4,18 @@ import {width, height} from "../../../constants";
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-        shadowColor: '#000',
-        shadowRadius: 8,
-        shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 2,
         justifyContent: 'center',
         alignItems: 'center',
         paddingBottom: 20,
-        elevation: 16
     },
     sub: {
-        shadowColor: '#000',
-        shadowRadius: 8,
-        shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 2,
         justifyContent: 'center',
         alignItems: 'center',
         paddingBottom: 20,
-        elevation: 16
     },
     cover: {
-        height,
+        height: height / 2,
+        resizeMode: "contain",
         width: width * 0.9,
     },
     h4: {
