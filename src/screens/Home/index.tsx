@@ -5,6 +5,7 @@ import { NavigationScreenProp } from 'react-navigation';
 import { IFilm } from "../../redux/modules/global/types";
 import Layout from "../../components/LayoutScroll";
 import Card from "../../components/Card";
+import styles from './styles';
 
 interface IFilmListProps {
   filmList: IFilm[],
@@ -20,7 +21,7 @@ class Home extends Component<IFilmListProps> {
   render() {
     const { filmList } = this.props;
     return (
-      <View>
+      <View style={styles.container}>
         <ScrollView>
           <Layout>
             {filmList.map(item => (

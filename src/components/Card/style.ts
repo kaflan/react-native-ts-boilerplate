@@ -1,35 +1,41 @@
 import { StyleSheet } from 'react-native';
-import {width} from "../../../constants";
+import {width , height} from "../../../constants";
 
 const style = StyleSheet.create({
     container: {
         backgroundColor: '#f1c40f',
-        width: width / 2.4,
+        flex: 3,
         marginBottom: 10,
-        borderRadius: 10,
-    },
-    sub: {
         borderRadius: 10,
         shadowColor: '#000',
         shadowRadius: 8,
         shadowOffset: {
             width: 0, height: 5,
         },
-        shadowOpacity: 0.6,
-
+        padding: 10,
+        shadowOpacity: 0.8,
+        elevation: 2,
+    },
+    sub: {
+        borderRadius: 10,
     },
     h1: {
-        paddingTop: 20,
-        fontSize: 16,
+        fontSize: 18,
         alignSelf: 'center',
-        textAlign: 'center',
+        textAlign: "center",
+        justifyContent: 'center',
         width: width / 2.4,
-        height: 60
+        flex: 3,
+        marginTop: 10,
+        fontWeight: 'bold',
+        textAlignVertical: 'center',
     },
     cover: {
-        borderRadius: 10,
-        height: width * 0.63,
-        width: width / 2.4,
+        alignSelf: 'center',
+        flex: 1,
+        height: height / 2,
+        resizeMode: "contain",
+        width: width * 0.8,
     }
 });
 

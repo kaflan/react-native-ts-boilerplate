@@ -23,7 +23,7 @@ export const PrimaryNav = createStackNavigator(
 
       return ({
         headerStyle: { backgroundColor: '#4C3E54' },
-        headerBackTitle: '',
+        headerBackTitle: '  ',
         title,
         headerTintColor: 'white',
         headerTitleStyle: {
@@ -31,7 +31,7 @@ export const PrimaryNav = createStackNavigator(
           alignSelf: 'center',
           textAlign: "center",
           justifyContent: 'center',
-          flex: 1,
+          flex: 3,
           fontWeight: 'bold',
           textAlignVertical: 'center',
         },

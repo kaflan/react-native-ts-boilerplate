@@ -1,19 +1,30 @@
 import {StyleSheet} from "react-native";
-import {width} from "../../../constants";
+import {width, height} from "../../../constants";
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        backgroundColor: '#fff',
+        shadowColor: '#000',
+        shadowRadius: 8,
+        shadowOffset: {width: 0, height: 5},
+        shadowOpacity: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 20,
+        elevation: 16
+    },
     sub: {
         shadowColor: '#000',
         shadowRadius: 8,
         shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 0.4,
+        shadowOpacity: 2,
         justifyContent: 'center',
         alignItems: 'center',
         paddingBottom: 20,
+        elevation: 16
     },
     cover: {
-        height: width * 1.67,
+        height,
         width: width * 0.9,
     },
     h4: {
