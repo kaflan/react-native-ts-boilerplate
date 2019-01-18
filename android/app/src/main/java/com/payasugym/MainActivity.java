@@ -1,21 +1,15 @@
 package com.payasugym;
 
 import com.facebook.react.ReactActivity;
-import android.content.Intent;     // <--- import
-import android.os.Bundle;
-
-import com.facebook.CallbackManager;
-import com.facebook.FacebookSdk;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import android.content.Intent;
 
 public class MainActivity extends ReactActivity {
 
-    CallbackManager mCallbackManager;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+        MainApplication.getCallbackManager().onActivityResult(requestCode, resultCode, data);
     }
     /**
      * Returns the name of the main component registered from JavaScript.
